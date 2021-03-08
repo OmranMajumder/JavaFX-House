@@ -1,8 +1,12 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Omran (Omi) Majumder
+ * Dr. Alrajab
+ * BCS345 JAVA Programming
+ * 12 March 2021
+ * Assignment 3
+ * This program outputs a house using JavaFX
  */
+
 package javafx.house;
 
 import javafx.application.Application;
@@ -155,7 +159,7 @@ public class JavaFXHouse extends Application{
             for (int j = 0; j < 4; j++) {
                 
                 // for-loop to instantiate columns with dimensions and position
-                fillets[i] = new Rectangle(85 + i * 130 + j * 10, 165, 5, 238);
+                fillets[i] = new Rectangle(85 + i * 130 + j * 10, 166, 5, 236);
                 fillets[i].setFill(Color.rgb(201, 201, 201)); // set fill color to gray
                 root.getChildren().add(fillets[i]); // add fillet to Group
                 
@@ -191,7 +195,7 @@ public class JavaFXHouse extends Application{
             
         }
         
-        // declare and instantiate Scene with dimensions
+        // declare and instantiate Scene with dimensions and Group
         Scene scene = new Scene(root, 595, 600);
         stage.setTitle("A House"); // set title of Scene
         stage.setScene(scene); // set Scene
