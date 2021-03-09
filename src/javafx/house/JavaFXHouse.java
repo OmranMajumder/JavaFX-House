@@ -90,7 +90,9 @@ public class JavaFXHouse extends Application{
         
         // declare and instantiate array of Rectangles for steps
         Rectangle[] steps = new Rectangle[11];
-        for (int i = 0; i < 11; i++) {
+        // declare and initialize constant for total steps
+        final int NUM_STEPS = 11; 
+        for (int i = 0; i < NUM_STEPS; i++) {
             
             // instantiates array element with dimensions and position
             steps[i] = new Rectangle(130 - i * 10, 415 + i * 10, 335 + i * 20, 
@@ -103,10 +105,13 @@ public class JavaFXHouse extends Application{
         
         // declare and intantiate array of Rectangles for door panes
         Rectangle[] doorPanes = new Rectangle[26];
-        for (int i = 0; i < 24; i++) {
-            for (int j = 0; j < 3; j++) {
-                for (int k = 0; k < 4; k++) {
-                    for (int m = 0; m < 2; m++) {
+        // declare and initialize constants for total door panes
+        final int NUM_DOOR_PANES = 26, NUM_DOORS = 3, NUM_DOOR_PANE_ROWS = 4,
+                NUM_DOOR_PANE_COLUMNS = 2;
+        for (int i = 0; i < NUM_DOOR_PANES - 2; i++) {
+            for (int j = 0; j < NUM_DOORS; j++) {
+                for (int k = 0; k < NUM_DOOR_PANE_ROWS; k++) {
+                    for (int m = 0; m < NUM_DOOR_PANE_COLUMNS; m++) {
                         
                         // nested for-loops to instantiate door panes with 
                         // dimensions and position
@@ -118,7 +123,7 @@ public class JavaFXHouse extends Application{
                 }
             }
         }
-        for (int i = 24; i < 26; i++) {
+        for (int i = 24; i < NUM_DOOR_PANES; i++) {
             for (int j = 0; j < 2; j++) {
                 
                 // nested for-loops  to instantiate center door panes with
@@ -131,7 +136,9 @@ public class JavaFXHouse extends Application{
         
         // declare and instantiate array of Rectangles for plinths (below columns)
         Rectangle[] plinths = new Rectangle[4];
-        for (int i = 0; i < 4; i++) {
+        // declare and initialize constants for total columns (also used for plinths)
+        final int NUM_COLUMNS = 4;
+        for (int i = 0; i < NUM_COLUMNS; i++) {
             
             // for-loop to instantiate plinths with dimensions and position
             plinths[i] = new Rectangle(75 + i * 130, 403, 55, 12);
@@ -143,7 +150,7 @@ public class JavaFXHouse extends Application{
         
         // declare and instantiate array of Rectangles for columns
         Rectangle[] columns = new Rectangle[4];
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < NUM_COLUMNS; i++) {
             
             // for-loop to instantiate columns with dimensions and position
             columns[i] = new Rectangle(80 + i * 130, 165, 45, 238);
@@ -155,8 +162,10 @@ public class JavaFXHouse extends Application{
         
         // declare and instantiate array of Rectangles for fillets (column carvings)
         Rectangle[] fillets = new Rectangle[4];
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
+        // declare and initialize constant for total number of fillets
+        final int NUM_FILLETS = 4;
+        for (int i = 0; i < NUM_FILLETS; i++) {
+            for (int j = 0; j < NUM_COLUMNS; j++) {
                 
                 // for-loop to instantiate columns with dimensions and position
                 fillets[i] = new Rectangle(85 + i * 130 + j * 10, 166, 5, 236);
@@ -168,9 +177,11 @@ public class JavaFXHouse extends Application{
         
         // declare and instantiate array of Circles for cornices (top of columns)
         Circle[] cornices = new Circle[8];
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 4; j++) {
-                for (int k = 0; k < 2; k++) {
+        // declare and initialize constants for total number of cornices
+        final int NUM_CORNICES = 8, NUM_COLUMN_CORNICES = 2;
+        for (int i = 0; i < NUM_CORNICES; i++) {
+            for (int j = 0; j < NUM_COLUMNS; j++) {
+                for (int k = 0; k < NUM_COLUMN_CORNICES; k++) {
                     
                     // nested for-loops to instantiate cornices with dimensions
                     // and position
@@ -185,7 +196,9 @@ public class JavaFXHouse extends Application{
         
         // declare and instantiate array of Rectangles for platforms (below plinth)
         Rectangle[] platforms = new Rectangle[2];
-        for (int i = 0; i < 2; i++) {
+        // declare and initialize constant for total number of platforms
+        final int NUM_PLATFORMS = 2;
+        for (int i = 0; i < NUM_PLATFORMS; i++) {
             
             // for-loop to instantiate platforms with dimensions and position
             platforms[i] = new Rectangle(70 + i * 395, 415, 60, 5);
